@@ -1,6 +1,19 @@
 # The Last Hop Attack: Why Loop Cover Traffic over Fixed Cascades Threatens Anonymity
 Paper and Code for the Last Hop Attack
 
+# Reproduce Results
+
+## Docker
+```
+ docker build -t last_hop_attack .
+ docker run -v "$(pwd)/data:/usr/src/app/data" last_hop_attack:latest
+```
+
+## Python
+```
+python lasthop_anonymity_sets.py; python lasthop_advantage_uniform_cascade_selection.py; python lasthop_advantage_bandwidth_based_cascade_selection.py
+```
+
 # Artifact Appendix
 
 Paper title: **The Last Hop Attack: Why Loop Cover Traffic over Fixed
