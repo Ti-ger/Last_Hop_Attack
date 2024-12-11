@@ -96,23 +96,25 @@ docker run -v "$(pwd)/data:/usr/src/app/data" last_hop_attack:latest
 
 You should find the recalculated data in the "data" directory
 
-### Testing the Environment (Only for Functional and Reproduced badges)
+### Testing the Environment
 A functional docker environment should suffice
 ```bash
 docker run hello-world
 ```
 
-## Artifact Evaluation (Only for Functional and Reproduced badges)
+## Artifact Evaluation
 This section includes all the steps required to evaluate your artifact's functionality and validate your paper's key results and claims.
 Therefore, highlight your paper's main results and claims in the first subsection. And describe the experiments that support your claims in the subsection after that.
 
 ### Main Results and Claims
 List all your paper's results and claims that are supported by your submitted artifacts.
 
-#### Main Result 1: Name
-Describe the results in 1 to 3 sentences.
-Refer to the related sections in your paper and reference the experiments that support this result/claim.
+#### Main Result 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
+In certain situations, the adversary may be able to correlate their
+observations across multiple epochs. In this case, the anonymity sets can be intersected
+and quickly decay even if the initial number of users in the anonymity set is high (1.000.000)
 
+See Section (2.5 Multiple Epochs; Figure 2) and Experiment 1 (lasthop_anonymity_sets.py -> data/easis.csv)
 #### Main Result 2: Name
 ...
 
@@ -123,13 +125,10 @@ List each experiment the reviewer has to execute. Describe:
  - How long it takes and how much space it consumes on disk. (approximately)
  - Which claim and results does it support, and how.
 
-#### Experiment 1: Name
-Provide a short explanation of the experiment and expected results.
-Describe thoroughly the steps to perform the experiment and to collect and organize the results as expected from your paper.
-Use code segments to support the reviewers, e.g.,
-```bash
-python experiment_1.py
-```
+#### Experiment 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
+Script: lasthop_anonymity_sets.py
+Data:  data/easis.csv
+
 #### Experiment 2: Name
 ...
 
