@@ -134,21 +134,26 @@ In our paper, we considered a uniform selection of the mixes in the cascade (ùê
 
 #### Experiment 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
 Script: lasthop_anonymity_sets.py
-Data:  data/easis.csv
+
+Data: 
+- data/easis.csv
 
 #### Experiment 2: The Advantage of the Adversary is non-negligible for the global passive adversary and even for partially global adversaries
 Script: lasthop_advantage_uniform_cascade_selection.py 
+
 Data: 
 - data/lasthop_plot_all_1k.csv
 - data/lasthop_plot_ratio_big_steps.csv
 
 #### Experiment 3: The advantage of a global passive adversary is even for a low number of last hops non-negligible
 Script: lasthop_advantage_uniform_cascade_selection.py 
+
 Data: 
 - data/lasthop_plot_global_passive_10.csv
 
 #### Experiment 4: The advantage of a global passive adversary is also for a bandwidth-based cascade selection non-negligible 
 Script: lasthop_advantage_bandwidth_based_cascade_selection.py
+
 Data: 
 - data/lasthop_plot_bandwidth.csv
 - data/lasthop_plot_bandwidth_big_steps_1k.csv
