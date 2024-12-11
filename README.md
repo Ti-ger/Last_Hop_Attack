@@ -62,19 +62,18 @@ Be as specific as possible here.
 If possible, use code segments to simply the workflow, e.g.,
 
 ```bash
-git clone git@my_awesome_artifact.com/repo
-apt install libxxx xxx
+git clone https://github.com/Ti-ger/Last_Hop_Attack.git
+cd Last_Hop_Attack
+docker build -t last_hop_attack .
+docker run -v "$(pwd)/data:/usr/src/app/data" last_hop_attack:latest
 ```
-Describe the expected results where it makes sense to do so.
+
+You should find the recalculated data in the "data" directory
 
 ### Testing the Environment (Only for Functional and Reproduced badges)
-Describe the basic functionality tests to check if the environment is set up correctly.
-These tests could be unit tests, training an ML model on very low training data, etc..
-If these tests succeed, all required software should be functioning correctly.
-Include the expected output for unambiguous outputs of tests.
-Use code segments to simplify the workflow, e.g.,
+A functional docker environment should suffice
 ```bash
-python envtest.py
+docker run hello-world
 ```
 
 ## Artifact Evaluation (Only for Functional and Reproduced badges)
@@ -112,11 +111,7 @@ python experiment_1.py
 ...
 
 ## Limitations (Only for Functional and Reproduced badges)
-Describe which tables and results are included or are not reproducible with the provided artifact.
-Provide an argument why this is not included/possible.
+All calculations done in the paper can be reproduced with this artifact
 
 ## Notes on Reusability (Only for Functional and Reproduced badges)
-First, this section might not apply to your artifacts.
-Use it to share information on how your artifact can be used beyond your research paper, e.g., as a general framework.
-The overall goal of artifact evaluation is not only to reproduce and verify your research but also to help other researchers to re-use and improve on your artifacts.
-Please describe how your artifacts can be adapted to other settings, e.g., more input dimensions, other datasets, and other behavior, through replacing individual modules and functionality or running more iterations of a specific part.
+The code is focused on the Last Hop Attack and while it might serve as a pointer for further calculations a direct reusability was not intended
