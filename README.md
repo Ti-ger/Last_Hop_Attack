@@ -103,11 +103,9 @@ docker run hello-world
 ```
 
 ## Artifact Evaluation
-This section includes all the steps required to evaluate your artifact's functionality and validate your paper's key results and claims.
-Therefore, highlight your paper's main results and claims in the first subsection. And describe the experiments that support your claims in the subsection after that.
 
 ### Main Results and Claims
-List all your paper's results and claims that are supported by your submitted artifacts.
+
 
 #### Main Result 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
 See Section 2.5 Multiple Epochs; Figure 2 and Experiment 1 (lasthop_anonymity_sets.py -> data/easis.csv)
@@ -121,6 +119,16 @@ See Section 2.4 Expected Anonymity Set Size and 2.5 Multiple Epochs; Figure 2) a
 See Section 5 and Section 6 Figure 9 and Figure 10 and Experiment 2 (lasthop_advantage_uniform_cascade_selection.py)
 
 We show that the advantage for the global passive adversary converges to ≈ 0.999 and is thereby non-negligible; we furthermore argue that an adversary who has corrupted only a part of the network still has a non-negligible advantage but leave the choice at which exact point this is the case to the reader.
+
+#### Main Result 3: The advantage of a global passive adversary is even for a low number of last hops non-negligible
+See Section 7.1.2 and Figure 11 and Experiment 3
+
+We show that even if only a small number of mixes (1 - 10) is used the advantage of the adversary is still non-negligible.
+
+#### Main Result :4 The advantage of a global passive adversary is also for a bandwidth-based cascade selection non-negligible
+See Appendix C, Figure 12 and Figure 13 and Experiment 4
+
+In our paper, we considered a uniform selection of the mixes in the cascade (𝐴4) as well as a uniform selection of corrupted mixes. We sketch that the Last Hop Attack is also viable when other types of cascade selection e.g. bandwidth-based cascade selection is used
 
 ### Experiments 
 List each experiment the reviewer has to execute. Describe:
@@ -139,10 +147,12 @@ Data:
 - data/lasthop_plot_all_1k.csv
 - data/lasthop_plot_ratio_big_steps.csv
 
+#### Experiment 3: The advantage of a global passive adversary is even for a low number of last hops non-negligible
+Script: lasthop_advantage_uniform_cascade_selection.py 
+Data: 
+- data/lasthop_plot_global_passive_10.csv
 
-
-
-#### Experiment 3: Name 
+#### Experiment 4: Name 
 ...
 
 ## Limitations (Only for Functional and Reproduced badges)
