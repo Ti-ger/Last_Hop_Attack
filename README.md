@@ -125,17 +125,12 @@ See Section 7.1.2 and Figure 11 and Experiment 3
 
 We show that even if only a small number of mixes (1 - 10) is used the advantage of the adversary is still non-negligible.
 
-#### Main Result :4 The advantage of a global passive adversary is also for a bandwidth-based cascade selection non-negligible
+#### Main Result 4: The advantage of a global passive adversary is also for a bandwidth-based cascade selection non-negligible
 See Appendix C, Figure 12 and Figure 13 and Experiment 4
 
 In our paper, we considered a uniform selection of the mixes in the cascade (𝐴4) as well as a uniform selection of corrupted mixes. We sketch that the Last Hop Attack is also viable when other types of cascade selection e.g. bandwidth-based cascade selection is used
 
 ### Experiments 
-List each experiment the reviewer has to execute. Describe:
- - How to execute it in detailed steps.
- - What the expected result is.
- - How long it takes and how much space it consumes on disk. (approximately)
- - Which claim and results does it support, and how.
 
 #### Experiment 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
 Script: lasthop_anonymity_sets.py
@@ -152,8 +147,12 @@ Script: lasthop_advantage_uniform_cascade_selection.py
 Data: 
 - data/lasthop_plot_global_passive_10.csv
 
-#### Experiment 4: Name 
-...
+#### Experiment 4: The advantage of a global passive adversary is also for a bandwidth-based cascade selection non-negligible 
+Script: lasthop_advantage_bandwidth_based_cascade_selection.py
+Data: 
+- data/lasthop_plot_bandwidth.csv
+- data/lasthop_plot_bandwidth_big_steps_1k.csv
+- data/./lasthop_plot_bandwidth_big_steps_100.csv
 
 ## Limitations (Only for Functional and Reproduced badges)
 All calculations done in the paper can be reproduced with this artifact
