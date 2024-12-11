@@ -25,14 +25,18 @@ The data directory contains the calculation results. This repository contains al
 
 ## Docker
 
-### Load Docker Container
+### Load Docker Image
 ```
 docker load < last_hop_attack.tar 
+```
+
+### Run Docker Image
+```
+docker run -v "$(pwd)/data:/usr/src/app/data" last_hop_attack:latest
 ```
 ### Rebuild Docker Container
 ```
  docker build -t last_hop_attack .
- docker run -v "$(pwd)/data:/usr/src/app/data" last_hop_attack:latest
 ```
 
 ## Python
@@ -44,7 +48,8 @@ python lasthop_anonymity_sets.py; python lasthop_advantage_uniform_cascade_selec
 
 Paper title: **The Last Hop Attack: Why Loop Cover Traffic over Fixed
 Cascades Threatens Anonymity**
-Artifacts HotCRP Id: **https://artifact.petsymposium.org/artifact2025.2/paper.php/15** (not your paper Id, but the artifacts id)
+
+Artifacts HotCRP Id: **https://artifact.petsymposium.org/artifact2025.2/paper.php/15**
 
 Requested Badge: **Reproduced**
 
@@ -52,9 +57,9 @@ Requested Badge: **Reproduced**
 A main goal of this paper in general was reproducibility. This starts with our choice of the methodology, formal proofs and calculation and continues with the publication of the source code we used for these calculations. 
 
 This artifact contains the code which was used in our paper. 
-lasthop_anonymity_sets.py : Figure 2
-lasthop_advantage_uniform_cascade_selection.py : Figures 9, 10, 11, 13
-lasthop_advantage_bandwidth_based_cascade_selection.py : Figures 12, 13
+- lasthop_anonymity_sets.py : Figure 2
+- lasthop_advantage_uniform_cascade_selection.py : Figures 9, 10, 11, 13
+- lasthop_advantage_bandwidth_based_cascade_selection.py : Figures 12, 13
 
 ### Security/Privacy Issues and Ethical Concerns (All badges)
 There is no security, privacy, or ethical issue in using this artifact.
