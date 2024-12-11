@@ -1,6 +1,14 @@
 import math
 import numpy as np
+import os
 
+######################################################################
+#               Variables
+######################################################################
+output_directory = "data"
+
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
 ######################################################################
 # Calculates the Advantage based on the formula derived in Section 5
 # specifically Subsection 5.5
@@ -35,9 +43,9 @@ def calculate_uniform_advantage_iterative(n):
 
 
 ua_i_1k, ua_a_1k = calculate_uniform_advantage_iterative(1000)
-np.savetxt('./lasthop_plot_all_1k.csv', np.column_stack((ua_i_1k, ua_a_1k)),
+np.savetxt(os.path.join(output_directory, 'lasthop_plot_all_1k.csv'), np.column_stack((ua_i_1k, ua_a_1k)),
            header='indices,1k', comments='# ', delimiter=',', newline='\n')
-
+print(os.path.join(output_directory, 'lasthop_plot_all_1k.csv'))
 
 ######################################################################
 # Figure 10 : Advantage of the adversary depending on the
@@ -48,6 +56,8 @@ np.savetxt('./lasthop_plot_all_1k.csv', np.column_stack((ua_i_1k, ua_a_1k)),
 # and the last colum of this dataset:
 # - calculate_advantage_big_steps(100000)
 ######################################################################
+
+
 def calculate_advantage_steps(n, steps):
     advantage = np.zeros(steps)
     index = np.zeros(steps)
@@ -71,7 +81,7 @@ _, advantage_5k_big_steps = calculate_advantage_big_steps(5000)
 _, advantage_10k_big_steps = calculate_advantage_big_steps(10000)
 _, advantage_100k_big_steps = calculate_advantage_big_steps(100000)
 
-np.savetxt('./lasthop_plot_ratio_big_steps.csv', np.column_stack((ratio, advantage_1k_big_steps, advantage_5k_big_steps,
+np.savetxt(os.path.join(output_directory, 'lasthop_plot_ratio_big_steps.csv'), np.column_stack((ratio, advantage_1k_big_steps, advantage_5k_big_steps,
            advantage_10k_big_steps, advantage_100k_big_steps)), header='big steps,1k,5k,10k,100k', comments='# ', delimiter=',', newline='\n')
 
 ######################################################################
@@ -94,7 +104,7 @@ def calculate_advantage_global_passive(m):
 
 ua_i_full, ua_a_full = calculate_advantage_global_passive(10)
 
-np.savetxt('./lasthop_plot_global_passive_10.csv', np.column_stack((ua_i_full, ua_a_full)),
+np.savetxt(os.path.join(output_directory, 'lasthop_plot_global_passive_10.csv'), np.column_stack((ua_i_full, ua_a_full)),
            header='indices, advantage', comments='# ', delimiter=',', newline='\n')
 
 ######################################################################
@@ -105,5 +115,5 @@ np.savetxt('./lasthop_plot_global_passive_10.csv', np.column_stack((ua_i_full, u
 
 i_proportions_1k, a_proportions_1k = calculate_advantage_steps(1000, 1000)
 
-np.savetxt('./lasthop_plot_proportion_1k.csv', np.column_stack((i_proportions_1k, a_proportions_1k)),
+np.savetxt(os.path.join(output_directory, 'lasthop_plot_proportion_1k.csv'), np.column_stack((i_proportions_1k, a_proportions_1k)),
            header='proportion, advantage', comments='# ', delimiter=',', newline='\n')

@@ -1,5 +1,14 @@
 import math
 import numpy as np
+import os
+
+######################################################################
+#               Variables
+######################################################################
+output_directory = "data"
+
+if not os.path.exists(output_directory):
+    os.makedirs(output_directory)
 
 ######################################################################
 # Figure 2 :  Size of the Receiver Anonymity Set,
@@ -29,5 +38,5 @@ easis_1000000 = calculate_easi(mixes, 1000000, comm, epochs)
 
 index = np.arange(1, epochs+1)
 
-np.savetxt('./easis.csv', np.column_stack((index, easis_5000, easis_10000, easis_50000,
+np.savetxt(os.path.join(output_directory, './easis.csv'), np.column_stack((index, easis_5000, easis_10000, easis_50000,
            easis_100000, easis_1000000)), header='epoch,5k,10k,50k,100k,1M', comments='# ', delimiter=',', newline='\n')
