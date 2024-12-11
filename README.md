@@ -1,6 +1,25 @@
 # The Last Hop Attack: Why Loop Cover Traffic over Fixed Cascades Threatens Anonymity
 Paper and Code for the Last Hop Attack
 
+# Abstract
+Advanced mix net designs use a combination of loop cover traffic
+and fixed cascades to detect when active adversaries delay or drop
+messages. In this paper, we propose the Last Hop Attack, a new
+attack algorithm that takes advantage of the fact that users send
+loop cover, i.e., messages sent to themselves over the same mix
+nodes that they also use to communicate with others. We use established privacy definitions based on indistinguishability games and
+prove that our algorithm can break strong anonymity notions. Our
+research shows that the Last Hop Attack breaks Sender Receiver
+Pair Unlinkability for any Anonymous Communication Network
+that utilizes loop cover traffic, fixed cascades, and no additional
+cover traffic. We furthermore conclude that the notions of Sender
+Message Unlinkability, Receiver Message Unlinkability (and Unobservability), and Both Side Unlinkability (and Unobservability)
+are unachievable in this setting. To the best of our knowledge, this
+impossibility result is the first to show that loop cover traffic can
+threaten anonymity. It allows us to conclude that mix nets that
+utilize loop cover traffic and fixed cascades must deploy additional
+cover traffic to achieve strong anonymity.
+
 # Reproduce Results
 
 ## Docker
