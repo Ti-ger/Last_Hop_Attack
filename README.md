@@ -20,9 +20,17 @@ threaten anonymity. It allows us to conclude that mix nets that
 utilize loop cover traffic and fixed cascades must deploy additional
 cover traffic to achieve strong anonymity.
 
-# Reproduce Results
+# Data
+
+The data directory contains the calculation results. This repository contains all scripts in order to reproduce these results
 
 ## Docker
+
+### Load Docker Container
+```
+docker load < last_hop_attack.tar 
+```
+### Rebuild Docker Container
 ```
  docker build -t last_hop_attack .
  docker run -v "$(pwd)/data:/usr/src/app/data" last_hop_attack:latest
