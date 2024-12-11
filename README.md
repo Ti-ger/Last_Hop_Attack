@@ -114,9 +114,9 @@ In certain situations, the adversary may be able to correlate their
 observations across multiple epochs. In this case, the anonymity sets can be intersected
 and quickly decay even if the initial number of users in the anonymity set is high (1.000.000)
 
-See Section 2.4 Expected Anonymity Set Size and 2.5 Multiple Epochs; Figure 2) and Experiment 1 (lasthop_anonymity_sets.py -> data/easis.csv)
+See Section 2.4 Expected Anonymity Set Size and 2.5 Multiple Epochs; Figure 2) and Experiment 1
 #### Main Result 2: The Advantage of the Adversary is non-negligible for the global passive adversary and even for partially global adversaries
-See Section 5 and Section 6 Figure 9 and Figure 10 and Experiment 2 (lasthop_advantage_uniform_cascade_selection.py)
+See Section 5 and Section 6 Figure 9 and Figure 10 and Experiment 2
 
 We show that the advantage for the global passive adversary converges to ≈ 0.999 and is thereby non-negligible; we furthermore argue that an adversary who has corrupted only a part of the network still has a non-negligible advantage but leave the choice at which exact point this is the case to the reader.
 
