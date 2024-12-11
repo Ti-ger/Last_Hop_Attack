@@ -1,5 +1,4 @@
 # The Last Hop Attack: Why Loop Cover Traffic over Fixed Cascades Threatens Anonymity
-Paper and Code for the Last Hop Attack
 
 # Abstract
 Advanced mix net designs use a combination of loop cover traffic
