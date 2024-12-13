@@ -122,7 +122,7 @@ docker run hello-world
 
 
 #### Main Result 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
-See Section 2.5 Multiple Epochs; Figure 2 and [Experiment 1](#Experiment-1:-The-Receiver-Anonymity-Set-quickly-decays-when-multiple-epochs-are-observed).
+See Section 2.5 Multiple Epochs; Figure 2 and [Experiment-1](#experiment-1-the-receiver-anonymity-set-quickly-decays-when-multiple-epochs-are-observed).
 
 In certain situations, the adversary may be able to correlate their
 observations across multiple epochs. In this case, the anonymity sets can be intersected
