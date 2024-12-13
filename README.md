@@ -122,25 +122,24 @@ docker run hello-world
 
 
 #### Main Result 1: The Receiver Anonymity Set quickly decays when multiple epochs are observed
-See Section 2.5 Multiple Epochs; Figure 2 and [Experiment-1](#experiment-1-the-receiver-anonymity-set-quickly-decays-when-multiple-epochs-are-observed).
+See Section 2.4 Expected Anonymity Set Size, Section 2.5 Multiple Epochs, Figure 2 and [Experiment 1](#experiment-1-the-receiver-anonymity-set-quickly-decays-when-multiple-epochs-are-observed).
 
 In certain situations, the adversary may be able to correlate their
 observations across multiple epochs. In this case, the anonymity sets can be intersected
 and quickly decay even if the initial number of users in the anonymity set is high (1.000.000).
 
-See Section 2.4 Expected Anonymity Set Size and 2.5 Multiple Epochs, Figure 2 and Experiment 1.
 #### Main Result 2: The Advantage of the Adversary is non-negligible for the global passive adversary and even for partially global adversaries
-See Section 5 and Section 6, Figure 9 and Figure 10, and Experiment 2.
+See Section 5 and Section 6, Figure 9 and Figure 10, and [Experiment 2](experiment-2-the-advantage-of-the-adversary-is-non-negligible-for-the-global-passive-adversary-and-even-for-partially-global-adversaries).
 
 We show that the advantage for the global passive adversary converges to ≈ 0.999 and is thereby non-negligible; we furthermore argue that an adversary who has corrupted only a part of the network still has a non-negligible advantage but leave the choice at which exact point this is the case to the reader.
 
 #### Main Result 3: The advantage of a global passive adversary is even for a low number of last hops non-negligible
-See Section 7.1.2, Figure 11, and Experiment 3.
+See Section 7.1.2, Figure 11, and [Experiment 3](#main-result-3-the-advantage-of-a-global-passive-adversary-is-even-for-a-low-number-of-last-hops-non-negligible).
 
 We show that even if only a small number of mixes (1 - 10) is used, the advantage of the adversary is still non-negligible.
 
 #### Main Result 4: The advantage of a global passive adversary is also for a bandwidth-based cascade selection non-negligible
-See Appendix C, Figure 12, Figure 13, and Experiment 4.
+See Appendix C, Figure 12, Figure 13, and [Experiment 4](#main-result-4-the-advantage-of-a-global-passive-adversary-is-also-for-a-bandwidth-based-cascade-selection-non-negligible).
 
 In our paper, we considered a uniform selection of the mixes in the cascade (𝐴4) and a uniform selection of corrupted mixes. We sketch that the Last Hop Attack is also viable when other types of cascade selection, e.g., bandwidth-based cascade selection, are used.
 
