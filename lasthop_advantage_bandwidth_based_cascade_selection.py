@@ -33,6 +33,18 @@ def calculate_bandwidth_advantage(bandwidth_total, k):
     return index, advantage
 
 
+def calculate_bandwidth_advantage_big_steps(bandwidth_total, k, steps):
+    advantage = np.zeros(steps)
+    index = np.zeros(steps)
+    bandwidth_share = bandwidth_total / steps
+    for step in range(1, len(advantage)+1):
+        bandwidth_adversary = bandwidth_share * step
+        advantage[step -
+                  1] = bandwidth_advantage(bandwidth_total, bandwidth_adversary, k)
+        index[step-1] = bandwidth_adversary
+    return index, advantage
+
+
 ######################################################################
 # Figure 12 : Advantage of the adversary depending on the
 #             proportion of the corrupted bandwidth for different k.
@@ -44,8 +56,8 @@ bwa_i, bwa_a_1k = calculate_bandwidth_advantage(1000, 1000)
 np.savetxt(os.path.join(output_directory, './lasthop_plot_bandwidth.csv'), np.column_stack((bwa_i, bwa_a_10, bwa_a_100, bwa_a_1k)),
            header='bandwidth_advantage,10,100,1k', comments='# ', delimiter=',', newline='\n')
 
-bwa_i_big_steps, bwa_a_big_steps_1k = calculate_bandwidth_advantage(5, 1000)
-
+bwa_i_big_steps, bwa_a_big_steps_1k = calculate_bandwidth_advantage_big_steps(
+    1000, 1000, 5)
 np.savetxt(os.path.join(output_directory, './lasthop_plot_bandwidth_big_steps_1k.csv'), np.column_stack((bwa_i_big_steps,
            bwa_a_big_steps_1k)), header='bandwidth_advantage,1k', comments='# ', delimiter=',', newline='\n')
 
@@ -55,7 +67,8 @@ np.savetxt(os.path.join(output_directory, './lasthop_plot_bandwidth_big_steps_1k
 #             bandwidth-based cascade selection.
 # Combined with the data from "advantage_uniform_cascade_selection"
 ######################################################################
-bwa_i_big_steps, bwa_a_big_steps_100 = calculate_bandwidth_advantage(5, 100)
+bwa_i_big_steps, bwa_a_big_steps_100 = calculate_bandwidth_advantage_big_steps(
+    1, 100, 5)
 
 np.savetxt(os.path.join(output_directory, './lasthop_plot_bandwidth_big_steps_100.csv'), np.column_stack((bwa_i_big_steps,
-           bwa_a_big_steps_100)), header='bandwidth_advantage,1k', comments='# ', delimiter=',', newline='\n')
+           bwa_a_big_steps_100)), header='bandwidth_advantage,100', comments='# ', delimiter=',', newline='\n')
